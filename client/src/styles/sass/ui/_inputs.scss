@@ -1,0 +1,121 @@
+// A
+
+// B
+
+// C
+%checkBox-ipt{
+    display: block;
+
+    &:before{
+      content: '';
+    }
+
+    &:after{
+      content: attr(data-content);
+      margin-left: 5px;
+    }
+
+    &:checked:before{
+    }
+}
+
+// D
+%default-ipt{
+    display: initial;
+}
+
+// E
+%email-ipt{
+    @extend %default-ipt;
+}
+
+// F
+%fieldset{
+   display: initial;
+}
+
+// G
+
+// H
+
+// I
+
+// J
+
+// K
+
+// L
+%label{
+    display: initial;
+}
+
+%legend{
+    display: initial;
+}
+
+// M
+
+// N
+%number-ipt{
+    @extend %default-ipt;
+}
+
+// O
+
+// P
+%password-ipt{
+    @extend %default-ipt;
+}
+
+// Q
+
+// R
+%radio-ipt{
+    position: relative;
+    cursor: pointer;
+
+    &:before{
+        content: '';
+        position: absolute;
+    }
+
+    &:after{
+        content: attr(data-label);
+    }
+
+    &:checked:before{
+    }
+}
+
+// S
+%submit-ipt{
+    display: initial;
+}
+
+%select-ipt{
+    @extend %default-ipt;
+}
+
+// T
+%text-ipt{
+    @extend %default-ipt;
+}
+
+%tel-ipt{
+    @extend %default-ipt;
+}
+
+%textarea-ipt{
+    @extend %default-ipt;
+}
+
+// W
+
+// X
+
+// Y
+
+// Z
+
+
+
