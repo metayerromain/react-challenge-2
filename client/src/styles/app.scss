@@ -30,6 +30,7 @@
  /_/    \_\__\___/|_| |_| |_|___/
 
 */
+@import "./atoms/button.scss";
 
 
 
@@ -41,7 +42,8 @@
  | |  | (_| | |  | |_| | (_| | \__ \
  |_|   \__,_|_|   \__|_|\__,_|_|___/
 */
-
+@import "./partials/footer.scss";
+@import "./partials/header.scss";
 
 
 /*
@@ -67,3 +69,4 @@
               __/ |
              |___/
 */
+@import "./pages/home.scss";
