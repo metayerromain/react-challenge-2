@@ -1,0 +1,14 @@
+version: "3"
+services:
+  client-web:
+    image: node:12.14.1
+    ports:
+      - "3000:3000"
+    working_dir: /usr/src/app
+    volumes:
+      - ./client-web:/usr/src/app
+    entrypoint: ["npm", "start"]
+
+networks:
+  reactchallenge2:
+    driver: bridge
