@@ -10,9 +10,10 @@ class App extends React.Component {
       setToken: this.setToken,
       user: null,
       setUser: this.setUser,
-      somethingIsLoading: false,
       theme: null,
-      setTheme: this.setTheme
+      setTheme: this.setTheme,
+      somethingIsLoading: false,
+      setSomethingIsLoading: this.setSomethingIsLoading,
     }
   }
 
@@ -40,7 +41,7 @@ class App extends React.Component {
   render() {
     return (
         <AppContext.Provider value={this.state}>
-          <center> <h1> React Challenge 2 </h1> </center>
+          <center> <h1 style={{fontSize: '35px', fontWeight: 'bold', marginTop: '20px'}}> React Challenge 2 </h1> </center>
         </AppContext.Provider>
     );
   }
