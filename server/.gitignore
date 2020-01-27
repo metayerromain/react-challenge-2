@@ -7,3 +7,4 @@ vendor
 # misc
 .DS_Store
 .env
+var/*
