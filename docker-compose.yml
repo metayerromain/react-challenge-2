@@ -9,8 +9,13 @@ services:
     volumes:
       - ./client-web:/home/node/app
     environment:
-      - NODE_ENV=development
-    command: "npm start"
+      - NODE_ENV=${NODE_ENV}
+      - NPM_CONFIG_LOGLEVEL=${NPM_CONFIG_LOGLEVEL}
+    command: bash -c "
+        npm install
+        && npm rebuild node-sass
+        && npm start
+      "
 
 networks:
   reactchallenge2:
