@@ -17,6 +17,7 @@ services:
     command: bash -c "
         service apache2 start
       "
+
   ## CLIENT WEB
   client-web:
     image: node:12.14.1
