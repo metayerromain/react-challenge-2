@@ -1,0 +1,8 @@
+#!/bin/sh
+
+
+cp -rf ./config/post-merge.sample ./.git/hooks/post-merge
+
+echo "----------------------------------------------------"
+echo "HOOKS HAVE BEEN SUCCESSFULLY CONFIG FOR YOU BRO !!!!"
+echo "----------------------------------------------------"

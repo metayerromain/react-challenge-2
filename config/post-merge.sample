@@ -1,0 +1,12 @@
+#!/bin/sh
+
+echo " "
+echo "---------------------------"
+echo "INSTALL PHP DEPENDENCIES :)"
+echo "---------------------------"
+composer install -d api
+
+echo "----------------------------"
+echo "INSTALL NODE DEPENDENCIES :)"
+echo "----------------------------"
+cd client-web && npm install && cd ..
