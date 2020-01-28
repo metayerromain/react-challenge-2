@@ -1,6 +1,5 @@
 #!/bin/sh
 
-rm -fr /.git/hooks/post-merge
 cp ./config/post-merge.sample ./.git/hooks/post-merge
 
 echo "----------------------------------------------------"
