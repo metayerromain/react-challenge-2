@@ -5,7 +5,7 @@ End of semester project (Web3-Hetic)
 ## Install hooks for a better development experience
 - For linux and mac os user
 
-    bin/config/hooks or sh bin/configs
+    bin/config/hooks or sh bin/configs/hooks
     
 - For windows user
 
