@@ -1,9 +1,9 @@
 #!/bin/sh
 
 mkdir -p .git/hooks
-chmod -R 777 .git/hooks/
 cp -rf ./config/post-merge.sample .git/hooks/post-merge
 
+chmod -R 777 .git/hooks/*
 
 echo "----------------------------------------------------"
 echo "HOOKS HAVE BEEN SUCCESSFULLY CONFIG FOR YOU BRO !!!!"
