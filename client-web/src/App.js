@@ -41,7 +41,7 @@ class App extends React.Component {
   render() {
     return (
         <AppContext.Provider value={this.state}>
-          <center> <h1 style={{fontSize: '35px', fontWeight: 'bold', marginTop: '20px'}}> React Challenge 2 </h1> </center>
+          <center> <h1 style={{fontSize: '2em', fontWeight: 'bold', marginTop: '10px'}}> React Challenge 2 </h1> </center>
         </AppContext.Provider>
     );
   }
