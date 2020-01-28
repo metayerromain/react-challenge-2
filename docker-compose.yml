@@ -14,9 +14,6 @@ services:
     environment:
       - COMPOSER_ALLOW_SUPERUSER=1
       - DEBIAN_FRONTEND=noninteractive
-    command: bash -c "
-        service apache2 start
-      "
 
   ## CLIENT WEB
   client-web:
