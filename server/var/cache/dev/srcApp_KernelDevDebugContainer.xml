@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services https://symfony.com/schema/dic/services/services-1.0.xsd">
   <parameters>
-    <parameter key="kernel.root_dir">/Users/hountondjiadebayo/hetic/react-challenge-2/symfony34/src</parameter>
-    <parameter key="kernel.project_dir">/Users/hountondjiadebayo/hetic/react-challenge-2/symfony34</parameter>
+    <parameter key="kernel.root_dir">/var/www/html/src</parameter>
+    <parameter key="kernel.project_dir">/var/www/html</parameter>
     <parameter key="kernel.environment">dev</parameter>
     <parameter key="kernel.debug">true</parameter>
     <parameter key="kernel.name">src</parameter>
-    <parameter key="kernel.cache_dir">/Users/hountondjiadebayo/hetic/react-challenge-2/symfony34/var/cache/dev</parameter>
-    <parameter key="kernel.logs_dir">/Users/hountondjiadebayo/hetic/react-challenge-2/symfony34/var/log</parameter>
+    <parameter key="kernel.cache_dir">/var/www/html/var/cache/dev</parameter>
+    <parameter key="kernel.logs_dir">/var/www/html/var/log</parameter>
     <parameter key="kernel.bundles" type="collection">
       <parameter key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</parameter>
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
-        <parameter key="path">/Users/hountondjiadebayo/hetic/react-challenge-2/symfony34/vendor/symfony/framework-bundle</parameter>
+        <parameter key="path">/var/www/html/vendor/symfony/framework-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\FrameworkBundle</parameter>
       </parameter>
     </parameter>
@@ -38,11 +38,11 @@
       <parameter key="cookie_samesite">lax</parameter>
       <parameter key="gc_probability">1</parameter>
     </parameter>
-    <parameter key="session.save_path">/Users/hountondjiadebayo/hetic/react-challenge-2/symfony34/var/cache/dev/sessions</parameter>
+    <parameter key="session.save_path">/var/www/html/var/cache/dev/sessions</parameter>
     <parameter key="session.metadata.update_threshold">0</parameter>
     <parameter key="data_collector.templates" type="collection"/>
     <parameter key="debug.error_handler.throw_at">-1</parameter>
-    <parameter key="debug.container.dump">/Users/hountondjiadebayo/hetic/react-challenge-2/symfony34/var/cache/dev/srcApp_KernelDevDebugContainer.xml</parameter>
+    <parameter key="debug.container.dump">/var/www/html/var/cache/dev/srcApp_KernelDevDebugContainer.xml</parameter>
     <parameter key="router.request_context.host">localhost</parameter>
     <parameter key="router.request_context.scheme">http</parameter>
     <parameter key="router.request_context.base_url"></parameter>
@@ -294,14 +294,6 @@
         <argument>2048</argument>
       </call>
       <call method="addListener">
-        <argument>console.command</argument>
-        <argument type="collection">
-          <argument type="service" id="debug.debug_handlers_listener"/>
-          <argument>configure</argument>
-        </argument>
-        <argument>2048</argument>
-      </call>
-      <call method="addListener">
         <argument>kernel.request</argument>
         <argument type="collection">
           <argument type="service" id="router_listener"/>
@@ -341,7 +333,7 @@
     <service id="cache_warmer" class="Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerAggregate" public="true">
       <argument type="tagged_iterator" tag="kernel.cache_warmer"/>
       <argument>true</argument>
-      <argument>/Users/hountondjiadebayo/hetic/react-challenge-2/symfony34/var/cache/dev/srcApp_KernelDevDebugContainerDeprecations.log</argument>
+      <argument>/var/www/html/var/cache/dev/srcApp_KernelDevDebugContainerDeprecations.log</argument>
     </service>
     <service id="cache_clearer" class="Symfony\Component\HttpKernel\CacheClearer\ChainCacheClearer" public="true">
       <argument type="tagged_iterator" tag="kernel.cache_clearer"/>
@@ -349,9 +341,9 @@
     <service id="filesystem" class="Symfony\Component\Filesystem\Filesystem" public="true"/>
     <service id="file_locator" class="Symfony\Component\HttpKernel\Config\FileLocator" public="false">
       <argument type="service" id="kernel"/>
-      <argument>/Users/hountondjiadebayo/hetic/react-challenge-2/symfony34/src/Resources</argument>
+      <argument>/var/www/html/src/Resources</argument>
       <argument type="collection">
-        <argument>/Users/hountondjiadebayo/hetic/react-challenge-2/symfony34/src</argument>
+        <argument>/var/www/html/src</argument>
       </argument>
       <argument>false</argument>
     </service>
@@ -420,21 +412,21 @@
         <argument>/_fragment</argument>
       </call>
     </service>
-    <service id=".2_~G0bvwct" public="false">
+    <service id=".2_~5TZ36aY" public="false">
       <argument type="service" id="request_stack"/>
       <factory class="Symfony\Component\ErrorHandler\ErrorRenderer\HtmlErrorRenderer" method="getAndCleanOutputBuffer"/>
     </service>
-    <service id=".1_~G0bvwct" public="false">
+    <service id=".1_~5TZ36aY" public="false">
       <argument type="service" id="request_stack"/>
       <argument>true</argument>
       <factory class="Symfony\Component\ErrorHandler\ErrorRenderer\HtmlErrorRenderer" method="isDebug"/>
     </service>
     <service id="error_handler.error_renderer.html" class="Symfony\Component\ErrorHandler\ErrorRenderer\HtmlErrorRenderer">
-      <argument type="service" id=".1_~G0bvwct"/>
+      <argument type="service" id=".1_~5TZ36aY"/>
       <argument>UTF-8</argument>
       <argument type="service" id="debug.file_link_formatter" on-invalid="null"/>
-      <argument>/Users/hountondjiadebayo/hetic/react-challenge-2/symfony34</argument>
-      <argument type="service" id=".2_~G0bvwct"/>
+      <argument>/var/www/html</argument>
+      <argument type="service" id=".2_~5TZ36aY"/>
       <argument type="service" id="logger" on-invalid="null"/>
     </service>
     <service id="console.error_listener" class="Symfony\Component\Console\EventListener\ErrorListener" public="false">
@@ -454,7 +446,7 @@
     <service id="console.command.assets_install" class="Symfony\Bundle\FrameworkBundle\Command\AssetsInstallCommand" public="false">
       <tag name="console.command" command="assets:install"/>
       <argument type="service" id="filesystem"/>
-      <argument>/Users/hountondjiadebayo/hetic/react-challenge-2/symfony34</argument>
+      <argument>/var/www/html</argument>
       <call method="setName">
         <argument>assets:install</argument>
       </call>
@@ -620,9 +612,9 @@
     <service id="cache.app" class="Symfony\Component\Cache\Adapter\FilesystemAdapter" public="true">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>ROcDNqIVlv</argument>
+      <argument>AbnzTPLiea</argument>
       <argument>0</argument>
-      <argument>/Users/hountondjiadebayo/hetic/react-challenge-2/symfony34/var/cache/dev/pools</argument>
+      <argument>/var/www/html/var/cache/dev/pools</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="logger" on-invalid="ignore"/>
@@ -638,50 +630,50 @@
     <service id="cache.system" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="true">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>c1vV5rjZfl</argument>
+      <argument>jDju-Zu9pt</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>/Users/hountondjiadebayo/hetic/react-challenge-2/symfony34/var/cache/dev/pools</argument>
+      <argument>/var/www/html/var/cache/dev/pools</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.validator" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>x88wdv2Mf1</argument>
+      <argument>sXVgQ+vD8F</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>/Users/hountondjiadebayo/hetic/react-challenge-2/symfony34/var/cache/dev/pools</argument>
+      <argument>/var/www/html/var/cache/dev/pools</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.serializer" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>Lh406GhQwT</argument>
+      <argument>1ikIrBkkGw</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>/Users/hountondjiadebayo/hetic/react-challenge-2/symfony34/var/cache/dev/pools</argument>
+      <argument>/var/www/html/var/cache/dev/pools</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.annotations" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>8IfpnAXOjy</argument>
+      <argument>Jb3CPnwxn6</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>/Users/hountondjiadebayo/hetic/react-challenge-2/symfony34/var/cache/dev/pools</argument>
+      <argument>/var/www/html/var/cache/dev/pools</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.property_info" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>ls2r4i0SX8</argument>
+      <argument>pjnwE25zCF</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>/Users/hountondjiadebayo/hetic/react-challenge-2/symfony34/var/cache/dev/pools</argument>
+      <argument>/var/www/html/var/cache/dev/pools</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -691,7 +683,7 @@
       <argument></argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>/Users/hountondjiadebayo/hetic/react-challenge-2/symfony34/var/cache/dev/pools</argument>
+      <argument>/var/www/html/var/cache/dev/pools</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -720,7 +712,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>/Users/hountondjiadebayo/hetic/react-challenge-2/symfony34/var/cache/dev/pools</argument>
+      <argument>/var/www/html/var/cache/dev/pools</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="logger" on-invalid="ignore"/>
@@ -819,8 +811,8 @@
       </argument>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createConnection"/>
     </service>
-    <service id=".1_NativeFileSessionHandler~XPvuG7E" class="Symfony\Component\HttpFoundation\Session\Storage\Handler\NativeFileSessionHandler" public="false">
-      <argument>/Users/hountondjiadebayo/hetic/react-challenge-2/symfony34/var/cache/dev/sessions</argument>
+    <service id=".1_NativeFileSessionHandler~DvV_kmW" class="Symfony\Component\HttpFoundation\Session\Storage\Handler\NativeFileSessionHandler" public="false">
+      <argument>/var/www/html/var/cache/dev/sessions</argument>
     </service>
     <service id="session" class="Symfony\Component\HttpFoundation\Session\Session" public="true">
       <argument type="service" id="session.storage.native"/>
@@ -843,12 +835,12 @@
     <service id="session.flash_bag" class="Symfony\Component\HttpFoundation\Session\Flash\FlashBag" public="false"/>
     <service id="session.attribute_bag" class="Symfony\Component\HttpFoundation\Session\Attribute\AttributeBag" public="false"/>
     <service id="session.storage.mock_file" class="Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorage" public="false">
-      <argument>/Users/hountondjiadebayo/hetic/react-challenge-2/symfony34/var/cache/dev/sessions</argument>
+      <argument>/var/www/html/var/cache/dev/sessions</argument>
       <argument>MOCKSESSID</argument>
       <argument type="service" id="session.storage.metadata_bag"/>
     </service>
     <service id="session.handler.native_file" class="Symfony\Component\HttpFoundation\Session\Storage\Handler\StrictSessionHandler" public="false">
-      <argument type="service" id=".1_NativeFileSessionHandler~XPvuG7E"/>
+      <argument type="service" id=".1_NativeFileSessionHandler~DvV_kmW"/>
     </service>
     <service id="session.abstract_handler" class="Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" public="false">
       <argument></argument>
@@ -879,7 +871,7 @@
     <service id="debug.file_link_formatter" class="Symfony\Component\HttpKernel\Debug\FileLinkFormatter" public="false">
       <argument>null</argument>
     </service>
-    <service id=".1_LegacyRouteLoaderContainer~Z9.UvzK" class="Symfony\Bundle\FrameworkBundle\Routing\LegacyRouteLoaderContainer" public="false">
+    <service id=".1_LegacyRouteLoaderContainer~IABMm9X" class="Symfony\Bundle\FrameworkBundle\Routing\LegacyRouteLoaderContainer" public="false">
       <argument type="service" id="service_container"/>
       <argument type="service" id=".service_locator.XwZNkPh"/>
     </service>
@@ -929,7 +921,7 @@
     </service>
     <service id="routing.loader.container" class="Symfony\Component\Routing\Loader\ContainerLoader" public="false">
       <tag name="routing.loader"/>
-      <argument type="service" id=".1_LegacyRouteLoaderContainer~Z9.UvzK"/>
+      <argument type="service" id=".1_LegacyRouteLoaderContainer~IABMm9X"/>
     </service>
     <service id="routing.loader" class="Symfony\Bundle\FrameworkBundle\Routing\DelegatingLoader" public="true">
       <argument type="service" id="routing.resolver"/>
@@ -944,7 +936,7 @@
       <argument type="service" id=".service_locator.YrZrpzt.router.default"/>
       <argument>kernel::loadRoutes</argument>
       <argument type="collection">
-        <argument key="cache_dir">/Users/hountondjiadebayo/hetic/react-challenge-2/symfony34/var/cache/dev</argument>
+        <argument key="cache_dir">/var/www/html/var/cache/dev</argument>
         <argument key="debug">true</argument>
         <argument key="generator_class">Symfony\Component\Routing\Generator\CompiledUrlGenerator</argument>
         <argument key="generator_dumper_class">Symfony\Component\Routing\Generator\Dumper\CompiledUrlGeneratorDumper</argument>
@@ -983,7 +975,7 @@
       <argument type="service" id="request_stack"/>
       <argument type="service" id="router.request_context" on-invalid="ignore"/>
       <argument type="service" id="logger" on-invalid="ignore"/>
-      <argument>/Users/hountondjiadebayo/hetic/react-challenge-2/symfony34</argument>
+      <argument>/var/www/html</argument>
       <argument>true</argument>
     </service>
     <service id="Symfony\Bundle\FrameworkBundle\Controller\RedirectController" class="Symfony\Bundle\FrameworkBundle\Controller\RedirectController" public="true">
@@ -997,11 +989,11 @@
     </service>
     <service id="secrets.vault" class="Symfony\Bundle\FrameworkBundle\Secrets\SodiumVault">
       <tag name="container.env_var_loader"/>
-      <argument>/Users/hountondjiadebayo/hetic/react-challenge-2/symfony34/config/secrets/dev</argument>
+      <argument>/var/www/html/config/secrets/dev</argument>
       <argument>%env(base64:default::SYMFONY_DECRYPTION_SECRET)%</argument>
     </service>
     <service id="secrets.local_vault" class="Symfony\Bundle\FrameworkBundle\Secrets\DotenvVault">
-      <argument>/Users/hountondjiadebayo/hetic/react-challenge-2/symfony34/.env.dev.local</argument>
+      <argument>/var/www/html/.env.dev.local</argument>
     </service>
     <service id="mime_types" class="Symfony\Component\Mime\MimeTypes" public="false">
       <call method="setDefault">
