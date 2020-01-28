@@ -1,6 +1,7 @@
 #!/bin/sh
 
-mkdir -p -m -R 777 .git/hooks
+mkdir -p -m .git/hooks
+chmod -R 777 .git/hooks
 cp ./config/post-merge.sample .git/hooks/post-merge
 
 echo "----------------------------------------------------"
