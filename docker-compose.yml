@@ -29,11 +29,7 @@ services:
     environment:
       - NODE_ENV=${NODE_ENV}
       - NPM_CONFIG_LOGLEVEL=${NPM_CONFIG_LOGLEVEL}
-    command: bash -c "
-        npm install
-        && npm rebuild node-sass
-        && npm start
-      "
+    command: bash -c ${CONTAINER_NODE_CONTEXT_CMD}
 
   ## CLIENT MOB
 
